@@ -4,10 +4,17 @@ import axios from 'axios';
 
 function App() {
 
+<<<<<<< HEAD
+=======
+  //0. get the availableBal from API
+
+
+>>>>>>> da30a0a6f77c144be458788c3c71be018699237b
 
   //1. define the consts
 
   const [amount, setAmount] = useState(0);
+<<<<<<< HEAD
   const [custId, setCustId] = useState(0);
   const [receiverId, setReceiverId] = useState(0);
 
@@ -30,16 +37,41 @@ function App() {
     "x-api-key": "4fLNtutUxi797l5cazMtm4z6FEEwCWm57NjjCvxP", 
   }; 
   const data = axios.post(url, body, { headers: headers }).then((res) => { console.log(res.data) }) 
+=======
+  const [custId, setCustId] = useState(null);
+  const [receiverId, setReceiverId] = useState(null);
+  
+  //2. get custID from login
+
+  const url = "https://ipllrj2mq8.execute-api.ap-southeast-1.amazonaws.com/techtrek/account"; 
+  const body = { 
+    custID: 8, 
+    accountKey: "xu4m4b7c-vfb3-tax6-mxr4-9qii6g11fyf", 
+  }; 
+  const headers = { 
+    "x-api-key": "4fLNtutUxi797l5cazMtm4z6FEEwCWm57NjjCvxP", 
+  }; 
+  const data = axios.post(url, body, { headers: headers }).then((res) => { return res.data; }) 
+>>>>>>> da30a0a6f77c144be458788c3c71be018699237b
   .catch(error => console.log(error));
 
 
 
+<<<<<<< HEAD
   return ( 
+=======
+
+  return ( 
+
+>>>>>>> da30a0a6f77c144be458788c3c71be018699237b
     //3. transfer form
     <div className="transferForm">
       <form>
           <h3>Transfer</h3>
+<<<<<<< HEAD
           <h4>Your account balance -insert api response here- </h4>
+=======
+>>>>>>> da30a0a6f77c144be458788c3c71be018699237b
           <div className="form-group">
               <label>Customer ID of receiver</label>
               <input type="text" className="form-control" value={receiverId} onChange={(e) => {
@@ -55,9 +87,13 @@ function App() {
        
         </div>
     
+<<<<<<< HEAD
         <button type = "submit">Submit</button>
         <h5>Your new account balance is availableBal - {amount} </h5>
 
+=======
+        <button class = "btn default">Transfer</button>      
+>>>>>>> da30a0a6f77c144be458788c3c71be018699237b
       </form>
     </div>
     
