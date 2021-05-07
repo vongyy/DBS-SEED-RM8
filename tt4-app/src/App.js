@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import TransactHistory from "transactHistory/transactHistory.js"
+import TransactionHistory from "./transactHistory/transactHistory"
 function App() {
   return (
     <div className="App">
-      <TransactHistory />
+      <TransactionHistory />
     </div>
   );
 }
