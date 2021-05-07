@@ -14,14 +14,14 @@ async function loginUser(credentials) {
    }
 
 function Login({ setToken }) {
-    const [username, setUserName] = useState();
-    const [password, setPassword] = useState();
+    const [userName, setUserName] = useState();
+    const [userPass, setPassword] = useState();
 
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await loginUser({
-          username,
-          password
+            userName,
+            userPass
         });
         setToken(token);
       }
