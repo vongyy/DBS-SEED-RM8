@@ -6,6 +6,7 @@ async function loginUser(credentials) {
     return fetch('https://ipllrj2mq8.execute-api.ap-southeast-1.amazonaws.com/techtrek/login', {
       method: 'POST',
       headers: {
+        "x-api-key": "4fLNtutUxi797l5cazMtm4z6FEEwCWm57NjjCvxP",
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(credentials)
@@ -24,18 +25,18 @@ function Login({ setToken }) {
             userPass
         });
         setToken(token);
-      }
+    }
     return (
         <div className="login-wrapper">
             <h1>Please Log In</h1>
             <form onSubmit={handleSubmit}>
             <label>
                 <p>Username</p>
-                <input type="text" onChange={e => setUserName(e.target.value)}/>
+                <input type="text" placeholder="username" value={userName} onChange={e => setUserName(e.target.value)}/>
             </label>
             <label>
                 <p>Password</p>
-                <input type="password" onChange={e => setPassword(e.target.value)}/>
+                <input type="password" placeholder="password" value={userPass} onChange={e => setPassword(e.target.value)}/>
             </label>
             <div>
                 <button type="submit">Submit</button>
