@@ -5,6 +5,9 @@ import Dashboard from './components_login/Dashboard'
 import Preferences from './components_login/Preferences'
 import React, {useState} from 'react'
 import Login from './components_login/Login'
+import Navbar from './navbar/navbar';
+import TransactionHistory from "./transactHistory/transactHistory"
+import Accounts from "./components/Accounts"
 
 function setToken(userToken) {
   sessionStorage.setItem('token', JSON.stringify(userToken));
@@ -22,19 +25,10 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Application</h1>
-      <BrowserRouter>
-        <Switch>
-          <Route path = "/dashboard">
-            <Dashboard>
-            </Dashboard>
-          </Route>
-          <Route path = "/preferences">
-            <Preferences>
-            </Preferences>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <Navbar/>
+      <Login></Login>
+      <Accounts />
+      <TransactionHistory />
     </div>
   );
 }
