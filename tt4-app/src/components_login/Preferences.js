@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 class Preferences extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
+            <h2>
+                Preferences
+            </h2>
         )
     }
 }

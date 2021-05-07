@@ -3,8 +3,14 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Dashboard from './components_login/Dashboard'
 import Preferences from './components_login/Preferences'
+import React, {useState} from 'react'
+import Login from './components_login/Login'
 
 function App() {
+  const [token, setToken] = useState();
+  if(!token){
+    return <Login setToken={setToken}></Login>
+  }
   return (
     <div className="App">
       <h1>Application</h1>
@@ -14,7 +20,7 @@ function App() {
             <Dashboard>
             </Dashboard>
           </Route>
-          <Route path = "/dashboard">
+          <Route path = "/preferences">
             <Preferences>
             </Preferences>
           </Route>
